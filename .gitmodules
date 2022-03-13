@@ -1,0 +1,3 @@
+[submodule "js-multistep-form"]
+	path = js-multistep-form
+	url = https://github.com/WebDevSimplified/js-multistep-form

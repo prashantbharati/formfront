@@ -5,31 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+
+    <style>
+        .button{
+    display: table-cell;
+    background-color: #68CBC1;
+    color: white;    
+    max-width: 250px;   
+    font-weight: 700;
+    border-style: none;
+    border-radius: 999px 999px 999px 999px;
+    box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
+  }
+    </style>
+
 </head>
 <body>
 
     
     <div id="body">
+        <h1>Lol </h1>
         <div id="mainDiv">
             <div id="screenOne">
             </div>
         </div>
     </div>
 
+
+    
     <script>
 
 
-
+window.onload=fun(value);
   const user={
     step: 0,
     area: 0,
     city: "",
   }
 
-  const step = user.step;
+  let step = user.step;
 
   // Proceed to next step
   const nextStep = (e) => {
+
     setuser({ ...user, step: step + 1 });
   };
 
@@ -43,44 +61,75 @@
     setuser({ ...user, [input]: e.target.value });
   };
 
-  switch (step) {
-    case 0:
-      return (
-        <Explore
-          user={user}
-          setuser={setuser}
-          nextStep={nextStep}
-          handleChange={handleChange}
-        />
-      );
-    case 1:
-      return (
-        <RooftopArea
-          nextStep={nextStep}
-          prevStep={prevStep}
-          handleChange={handleChange}
-          user={user}
-          setuser={setuser}
-        />
-      );
-    case 2:
-      return (
-        <City
-          nextStep={nextStep}
-          prevStep={prevStep}
-          handleChange={handleChange}
-          user={user}
-          setuser={setuser}
-        />
-      );
-    case 3:
-      return <Success user={user} setuser={setuser} />;
+  function fun(value)
+  {
+      
+        let html=
+        `<div >
+            <h1></h1>
+      <h2>
+   
+        See How much water you save in a year
+      </h2>
+      <br />
+      <Button class="button" >
+        Explore
+      </Button>
+    </div>`
 
-    default:
-      console.log("This is a multi-step form built with React.");
+    document.getElementById("mainDiv").innerHTML=html;
+     
+    
+//     switch (step) {
+//     case 0:
+     
+//     let html=
+//         `<div >
+//             <h1></h1
+//       <h2>
+   
+//         See How much water you save in a year
+//       </h2>
+//       <br />
+//       <Button >
+//         Explore
+//       </Button>
+//     </div>`
+
+//     document.getElementById("mainDiv").innerHTML=html;
+
+//       ;
+//     case 1:
+//       return (
+//         <RooftopArea
+//           nextStep={nextStep}
+//           prevStep={prevStep}
+//           handleChange={handleChange}
+//           user={user}
+//           setuser={setuser}
+//         />
+//       );
+//     case 2:
+//       return (
+//         <City
+//           nextStep={nextStep}
+//           prevStep={prevStep}
+//           handleChange={handleChange}
+//           user={user}
+//           setuser={setuser}
+//         />
+//       );
+//     case 3:
+//       return <Success user={user} setuser={setuser} />;
+
+//     default:
+//       console.log("This is a multi-step form built with React.");
+//   }
+
   }
 
-window.onload=fun("stone");
+  
+
 
 
     </script>
