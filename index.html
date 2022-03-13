@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+
+    
+    <div id="body">
+        <div id="mainDiv">
+            <div id="screenOne">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+  const user={
+    step: 0,
+    area: 0,
+    city: "",
+  }
+
+  const step = user.step;
+
+  // Proceed to next step
+  const nextStep = (e) => {
+    setuser({ ...user, step: step + 1 });
+  };
+
+  // Go back to prev step
+  const prevStep = () => {
+    setuser({ ...user, step: step - 1 });
+  };
+
+  // Handle fields change
+  const handleChange = (input) => (e) => {
+    setuser({ ...user, [input]: e.target.value });
+  };
+
+  switch (step) {
+    case 0:
+      return (
+        <Explore
+          user={user}
+          setuser={setuser}
+          nextStep={nextStep}
+          handleChange={handleChange}
+        />
+      );
+    case 1:
+      return (
+        <RooftopArea
+          nextStep={nextStep}
+          prevStep={prevStep}
+          handleChange={handleChange}
+          user={user}
+          setuser={setuser}
+        />
+      );
+    case 2:
+      return (
+        <City
+          nextStep={nextStep}
+          prevStep={prevStep}
+          handleChange={handleChange}
+          user={user}
+          setuser={setuser}
+        />
+      );
+    case 3:
+      return <Success user={user} setuser={setuser} />;
+
+    default:
+      console.log("This is a multi-step form built with React.");
+  }
+
+window.onload=fun("stone");
+
+
+    </script>
+
+    
+</body>
+</html>
