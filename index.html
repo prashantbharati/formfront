@@ -1,139 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-
-    <style>
-        .button{
-    display: table-cell;
-    background-color: #68CBC1;
-    color: white;    
-    max-width: 250px;   
-    font-weight: 700;
-    border-style: none;
-    border-radius: 999px 999px 999px 999px;
-    box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
-  }
-    </style>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Montserrat';font-size: 22px;
+}
+</style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+lol
+  <form data-multi-step class="multi-step-form">
 
-    
-    <div id="body">
-        <h1>Lol </h1>
-        <div id="mainDiv">
-            <div id="screenOne">
-            </div>
-        </div>
+    <div class="card" data-step>
+      <h1 class="step-title">This is step 1</h1>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <button type="button" data-next>Explore</button>
     </div>
 
 
-    
-    <script>
+    <div class="card" data-step>
+      <h3 class="step-title">This is step 2</h3>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" name="city" id="city">
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zip Code</label>
+        <input type="text" name="zipcode" id="zipcode">
+      </div>
+      <button type="button" data-previous>Previous</button>
+      <button type="button" data-next>Next</button>
+    </div>
 
 
-window.onload=fun(value);
-  const user={
-    step: 0,
-    area: 0,
-    city: "",
-  }
-
-  let step = user.step;
-
-  // Proceed to next step
-  const nextStep = (e) => {
-
-    setuser({ ...user, step: step + 1 });
-  };
-
-  // Go back to prev step
-  const prevStep = () => {
-    setuser({ ...user, step: step - 1 });
-  };
-
-  // Handle fields change
-  const handleChange = (input) => (e) => {
-    setuser({ ...user, [input]: e.target.value });
-  };
-
-  function fun(value)
-  {
-      lol
-        let html=
-        `<div >
-            <h1></h1>
-      <h2>
-   
-        See How much water you save in a year
-      </h2>
-      <br />
-      <Button class="button" >
-        Explore
-      </Button>
-    </div>`
-
-    document.getElementById("mainDiv").innerHTML=html;
-     
-    
-//     switch (step) {
-//     case 0:
-     
-//     let html=
-//         `<div >
-//             <h1></h1
-//       <h2>
-   
-//         See How much water you save in a year
-//       </h2>
-//       <br />
-//       <Button >
-//         Explore
-//       </Button>
-//     </div>`
-
-//     document.getElementById("mainDiv").innerHTML=html;
-
-//       ;
-//     case 1:
-//       return (
-//         <RooftopArea
-//           nextStep={nextStep}
-//           prevStep={prevStep}
-//           handleChange={handleChange}
-//           user={user}
-//           setuser={setuser}
-//         />
-//       );
-//     case 2:
-//       return (
-//         <City
-//           nextStep={nextStep}
-//           prevStep={prevStep}
-//           handleChange={handleChange}
-//           user={user}
-//           setuser={setuser}
-//         />
-//       );
-//     case 3:
-//       return <Success user={user} setuser={setuser} />;
-
-//     default:
-//       console.log("This is a multi-step form built with React.");
-//   }
-
-  }
-
-  
-
-
-
-    </script>
-
-    
+    <div class="card" data-step>
+      <h3 class="step-title">This is step 3</h3>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName">
+      </div>
+      <button type="button" data-previous>Previous</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 </body>
 </html>
