@@ -97,15 +97,24 @@ body {
 <script>
   function initmap(){
   
-    var location={lat:28.704060,lng:77.102493};
+    var location={lat:21.145800,lng:79.088158};
     var map=new google.maps.Map(document.getElementById("map"),{
       zoom:5,
       center:location
     });
-    var marker=new google.maps.Marker({
-      position:location,
+    cities.map((city)=>{
+      var marker=new google.maps.Marker({
+      position:{
+        lat:city.geometry[0],
+        lng:city.geometry[1]
+      },
       map:map
     });
+    })
+    // var marker=new google.maps.Marker({
+    //   position:location,
+    //   map:map
+    // });
 
   }
 </script>
@@ -327,15 +336,11 @@ const cities = [
   html+=`</select>
          </div>`
             
-            // '${contacts.map(()=>{
 
-            // }) }' 
+  let html2;
 
-        //     <option value="1">One</option>
-        //     <option value="2">Two</option>
-        //     <option value="3">Three</option>
-        //   </select>
-        // </div>`
+
+         
 
   document.getElementById("inputGroupSelect01").innerHTML=html;
 
