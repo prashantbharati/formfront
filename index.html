@@ -59,7 +59,7 @@ body {
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">City</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01">
+          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
             <option selected>Choose Your City</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -102,6 +102,7 @@ body {
       zoom:5,
       center:location
     });
+
     cities.map((city)=>{
       var marker=new google.maps.Marker({
       position:{
@@ -110,13 +111,24 @@ body {
       },
       map:map
     });
+    marker.addListener("click", () => {
+   ccity=city.Name;
+   console.log(ccity);
+  });
     })
+
+   
     // var marker=new google.maps.Marker({
     //   position:location,
     //   map:map
     // });
 
   }
+  let ccity="lol";
+  google.maps.event.addDomListener(marker, 'click', function() {
+            // ccity=city
+            console.log(ccity,"love iyt")
+        });
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap">
@@ -124,6 +136,7 @@ body {
 </script>
 
 <script>
+ 
 
 const cities = [
   {
@@ -327,18 +340,20 @@ const cities = [
 
   let html;
 
-  html+=`</div>
-          <select class="custom-select" id="inputGroupSelect01">
+  html+=`
             <option selected>Choose Your City</option>`;
             cities.map((city)=>{
-              html+=`<option value="1">${city.Name}</option>`
+              html+=`<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
             });
-  html+=`</select>
-         </div>`
-            
+ 
+  function changeLanguage(value)
+  {
+    ccity=value;
+    console.log(ccity);
+  }
 
   let html2;
-
+  console.log(ccity);
 
          
 
