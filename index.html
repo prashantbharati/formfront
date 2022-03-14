@@ -113,15 +113,13 @@ body {
     });
     marker.addListener("click", () => {
    ccity=city.Name;
+
+    document.getElementById("inputGroupSelect01").value=ccity;
    console.log(ccity);
   });
     })
 
-   
-    // var marker=new google.maps.Marker({
-    //   position:location,
-    //   map:map
-    // });
+  
 
   }
   let ccity="lol";
@@ -341,7 +339,7 @@ const cities = [
   let html;
 
   html+=`
-            <option selected>Choose Your City</option>`;
+            <option selected>delhi</option>`;
             cities.map((city)=>{
               html+=`<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
             });
