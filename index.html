@@ -318,7 +318,24 @@ const cities = [
 
   let html;
 
+  html+=`</div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose Your City</option>`;
+            cities.map((city)=>{
+              html+=`<option value="1">'${city.Name}'</option>`
+            });
+  html+=`</select>
+         </div>`
+            
+            // '${contacts.map(()=>{
 
+            // }) }' 
+
+        //     <option value="1">One</option>
+        //     <option value="2">Two</option>
+        //     <option value="3">Three</option>
+        //   </select>
+        // </div>`
 
   document.getElementById("inputGroupSelect01").innerHTML=html;
 
