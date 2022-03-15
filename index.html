@@ -50,8 +50,8 @@ body {
     <div class="card" data-step>
 
       <div class="row"  >        
-        <div class="col-md-6 col-sm-12"style="height: 100vh;">
-          <br/>  <br/>  <br/>  <br/>
+        <div class="col-md-6 col-sm-12 mapleft"style="height: 100vh;">
+          <br/>  <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
       <h1 class="step-title ">Select Your City</h1>
       
       <div class="form-group">
@@ -339,7 +339,7 @@ const cities = [
   let html;
 
   html+=`
-            <option selected>delhi</option>`;
+            <option selected></option>`;
             cities.map((city)=>{
               html+=`<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
             });
