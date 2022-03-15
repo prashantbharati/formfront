@@ -50,6 +50,7 @@ body {
     <div class="card" data-step>
 
       <div class="row"  >        
+        
         <div class="col-md-6 col-sm-12 mapleft"style="height: 100vh;">
           <br/>  <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
       <h1 class="step-title ">Select Your City</h1>
@@ -67,9 +68,26 @@ body {
           </select>
         </div>
       </div>
+
+      <div
+      id="map2"
+      style=" 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:500px;
+        width: 500px;
+        z-index: 1000
+      " 
+    >
+      
+    </div>
+      <button type="button" class="button mapbutton" data-previous>SELECT FROM MAP</button>
+     
+
       <div class="form-grp2">
-        <button type="button" class="button" data-previous>Continue Back</button>
-        <button type="submit" class="button">Continue Next</button>
+        <button type="button" class="button" data-previous>CONTINUE BACK</button>
+        <button type="submit" class="button">CONTINUE NEXT</button>
       </div>
 
       </div>
@@ -101,7 +119,12 @@ body {
     var map=new google.maps.Map(document.getElementById("map"),{
       zoom:5,
       center:location
-    });
+    });    
+
+    var map2=new google.maps.Map(document.getElementById("map2"),{
+      zoom:5,
+      center:location
+    });  
 
     cities.map((city)=>{
       var marker=new google.maps.Marker({
@@ -119,9 +142,30 @@ body {
   });
     })
 
+
+    cities.map((city)=>{
+      var marker=new google.maps.Marker({
+      position:{
+        lat:city.geometry[0],
+        lng:city.geometry[1]
+      },
+      map:map2
+    });
+    marker.addListener("click", () => {
+   ccity=city.Name;
+
+    document.getElementById("inputGroupSelect01").value=ccity;
+   console.log(ccity);
+  });
+    })
   
 
   }
+
+
+  
+
+
   let ccity="lol";
   google.maps.event.addDomListener(marker, 'click', function() {
             // ccity=city
@@ -132,6 +176,9 @@ body {
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap">
 
 </script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap2">
+
+</script> -->
 
 <script>
  

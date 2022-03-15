@@ -88,6 +88,13 @@
   align-items: center;
 }
 
+.mapbutton {
+  display: block;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .hide {
   display: none;
 }
