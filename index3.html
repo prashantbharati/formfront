@@ -15,12 +15,13 @@
       font-family: 'Montserrat';
     }
 
-     .enddiv{
+    .enddiv{
        background-image: url("harvesting.png");
        background-size: cover;
        overflow: hidden;
        color: black;
      }
+
 
     .img-fluid {
       width: 65%;
@@ -31,23 +32,6 @@
     @media (max-width: 500px) {
       .card {
         text-align: center;
-        padding: 5px;
-
-      }
-    }
-
-    @media (max-width: 500px) {
-      .img-fluid {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .container {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
 
       }
     }
@@ -56,15 +40,6 @@
       .page2 {
         display: block;
         text-align: center;
-      }
-
-      @media (max-width: 500px) {
-        .form-control {
-          text-align: center;
-
-        }
-
-
 
       }
 
@@ -74,8 +49,6 @@
       }
 
     }
-
-
 
     .card {
       background-color: #9e9e9e;
@@ -236,7 +209,6 @@
 <body>
 
   <form data-multi-step class="multi-step-form">
-    
 
     <div class="card page" data-step>
       <h1 class="step-title">See how much water you save in a year</h1>
@@ -271,62 +243,66 @@
 
     <div class="card" data-step>
 
-      <div class="row">
-
-        <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
-          <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
-          <h1 class="step-title ">Select Your City</h1>
-
-          <div class="form-group">
-            <div class="input-group mb-3 ">
-              <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">City</label>
-              </div>
-              <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
-                <option selected>Choose Your City</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
+      <div class="row"  >        
+        
+        <div class="col-md-6 col-sm-12 mapleft"style="height: 100vh;">
+          <br/>  <br/>  <br/>  <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+      <h1 class="step-title ">Select Your City</h1>
+      
+      <div class="form-group">
+        <div class="input-group mb-3 ">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">City</label>
           </div>
+          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+            <option selected>Choose Your City</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
 
-          <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
-          <br />
-          <div id="map2" style=" 
+      <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+       <br/>
+      <div
+      id="map2"
+      style=" 
         display: none;
         align-items: center;
         justify-content: center;
         height:500px;
         width: 500px;
         z-index: 1000
-      ">
+      " 
+    >
+      
+    </div>
+      
 
-          </div>
-
-
-          <div class="form-grp2">
-            <button type="button" class="button" data-previous>CONTINUE BACK</button>
-            <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
-          </div>
-
-        </div>
-
-        <div id="map" class="col-sm-6">
-
-        </div>
-
-
+      <div class="form-grp2">
+        <button type="button" class="button" data-previous>CONTINUE BACK</button>
+        <button type="button" class="button" data-next>CONTINUE NEXT</button>
+      </div>
 
       </div>
 
+      <div id="map" class="col-sm-6">
+
+      </div>
+
+     
+
     </div>
+      
+    </div>
+
+
+
 
     <div class="card page enddiv" data-step>
       
       <div
-
-       id="lastpage"
        style="position:absolute;
          color:black;
          right:85px;
@@ -344,7 +320,6 @@
       </div>
      <button class="button btn btn-secondary" type="submit">Go back</button>
    </div>
-    
 
   </form>
 
@@ -359,11 +334,6 @@
     crossorigin="anonymous"></script>
 
   <script>
-    let val;
-    function getval(){
-      val=document.getElementById("ifield").value;
-      console.log(val);
-    }
 
     function maphide() {
       document.getElementById("map2").style.display = "flex";
@@ -687,7 +657,7 @@
     let html;
 
     html += `
-            <option selected></option>`;
+            <option selected>${ccity.Name}</option>`;
     cities.map((city) => {
       html += `<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
     });
@@ -698,6 +668,7 @@
     }
 
     let html2;
+  
     console.log(ccity);
     console.log(val);
 
@@ -711,32 +682,9 @@
     // let rain=
 
     let val2=val*0.092;
-    let ans=val2*ccity.rain*0.9
+    let ans=val2*city.rain*0.9
 
-    console.log(val2,ccity.rain,"lololoitit");
     console.log(ans);
-
-  function change(){ 
-
-     let nccity=cities.filter((city)=>{
-       if(city.Name===ccity)
-       return city;
-     })
-
-    let val2=val*0.092;
-    let ans=Math.floor(val2*nccity[0].rain*0.9);
-
-    console.log(nccity);
-    console.log(val2,nccity[0].rain,"lololoitit");
-    console.log(ans);
-    let html2=`<h3>
-        Hurray!!
-        <br/>
-        You saved around ${ans} liters
-       </h3>`;
-
-    document.getElementById("lastpage").innerHTML=html2
-  }
 
 
 
