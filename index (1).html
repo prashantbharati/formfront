@@ -178,6 +178,7 @@
     .mapleft {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
     }
 
@@ -188,10 +189,23 @@
   } */
     }
 
+    .roofbutton{
+        display: none;
+    }
+    
+
     @media screen and (max-width: 768px) {
       .mapbutton {
         display: block;
       }
+      .roofbutton{
+        display: block;
+      }
+
+      .roofbutton2{
+        display:none;
+      }
+
     }
 
     .hide {
@@ -250,10 +264,10 @@
       <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
-        <img class="img-fluid" src="houseimg.png" alt="">
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
  
-        <input   id="ex3" type="email" class="form-control input-normal"  aria-describedby="emailHelp" placeholder="Area (sq feet)">
-        <!-- <input id="ifield" class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
+        <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+        <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
         <br>
         <br>
         <br>
@@ -269,9 +283,9 @@
         <br><br>
         <br>
       </div>
-      <div class="col-md-8 col-sm-12">
-        <img class="img-fluid" src="houseimg.png" alt="">
-        </div>
+     
+        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
+        
 
       </div>
       
@@ -285,7 +299,7 @@
       <div class="row">
 
         <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
-          <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+         
           <h1 class="step-title ">Select Your City</h1>
 
           <div class="form-group">
