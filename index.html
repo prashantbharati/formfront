@@ -158,6 +158,385 @@ body {
 </head>
 <body>
 
+  <style>
+    #body{
+                 width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding-top:50px;
+      padding-bottom:50px;
+    }
+    #mainDiv{
+      color:black;
+      background:white;
+      width:100%;
+      border:3px solid transparent;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:center;
+    }
+    #mainDiv #screenOne{
+      width:100%;
+      box-sizing:border-box;
+      height:500px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:0px 200px;	
+    }
+    #mainDiv #screenOne button{
+      cursor:pointer;	
+      color:white;
+      font-size:20px;
+      background:#F00C;
+      padding:10px 20px;
+      border-radius:10px;
+      border:0px;
+    }
+    #mainDiv h1{
+      padding:30px 30px;
+      margin-bottom:50px;
+      font-size:50px;
+      font-family:sans-serif;
+      animation:zoom 0.5s linear;
+    }
+    #mainDiv div:nth-child(1) button{
+      cursor:pointer;
+      border:none;
+      background:#fff8;
+      border-radius:5px;
+    }
+    #mainDiv div:nth-child(1) button img{
+      width:30px;
+      height:30px;
+    }
+    #innerDiv{
+      animation:zoom 0.5s linear;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding:40px 30px;
+    }
+    #category{
+      background:#fff8;
+      text-decoration:none;	
+      color:black;
+      border:1px solid #aaa;
+      border-radius:10px;
+      margin-bottom:30px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:15px 40px 15px 40px;
+      margin-left:30px;
+    }
+    #category img{
+      border-radius:0;
+      width:200px;
+      height:200px;
+      transition:1s;
+      margin-top:20px;
+    }
+    #category img:hover{
+      transform:scale(1.1);
+      transition:1s;
+    }
+    #category p{
+      font-family:sans-serif;
+      color:black;
+      font-size:50px;
+      margin:0;
+    }
+    #category a{
+      margin-top:10px;
+    }
+    input[type="radio"]{
+      width:20px;
+      height:20px;
+    }
+    @keyframes zoom{
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+    @keyframes zoom1{
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+    @media only screen and (min-width:1500px){
+      #mainDiv #screenOne{
+        height:450px;
+        padding:0px 200px;
+      }
+      #mainDiv{
+        padding:50px 30px;
+      }
+      
+    }
+  </style>
+  
+  <div id="body">
+    <div id="mainDiv">
+      <div id="screenOne">
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    var questions=["Choose the material you want to process","What do you want to use it for?","Can you specify the Category?"];
+    var category={
+      "tile":{
+          "categories":{
+            
+            "Cutting":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/cutting.png",
+              "p":"Cutting",
+              "categories":{
+                "Saw Blade":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/saw-blade.png",
+                  "p":"Saw Blade",
+                  "href":""
+                  },
+                "Drill Bits":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/drill-bits.png",
+                  "p":"Drill Bits",
+                  "href":""
+                  },
+                "Profiling Bits":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/profilingbits.png",
+                  "p":"Profiling Bits",
+                  "href":""
+                  },
+                "Wire Ropes":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Wire-Ropes.png",
+                  "p":"Wire Ropes",
+                  "href":""
+                  },
+                "Texturing Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Texturing-Tools.png",
+                  "p":"Texturing Tools",
+                  "href":""
+                  }
+                }
+              },
+            "Polishing":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Polishing.png",
+              "p":"Polishing",
+              "categories":{
+                "Grinding Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Grinding_tools.png",
+                  "p":"Grinding Tools",
+                  "href":""
+                  },
+                "Diamond Polishing Pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/diamond-polishing-Pads.png",
+                  "p":"Diamond Polishing Pads",
+                  "href":""
+                  },
+                "Floor Polishing":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Floor-Polishing.png",
+                  "p":"Floor Polishing",
+                  "href":""
+                  },
+                "Sponge Polishing Pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Sponge-Polishing-Pad.png",
+                  "p":"Sponge Polishing Pads",
+                  "href":""
+                  },
+                "Electro Plated Polishing pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/ElectroPlatedPolishingPads.png",
+                  "p":"Electro Plated Polishing pads",
+                  "href":""
+                  }
+                }
+              },
+            "Handling":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Handling-Tools.png",
+              "p":"Handling",
+              "categories":{
+                "Lifting Clamps":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Lifting-Clamp.webp",
+                  "p":"Lifting Clamps",
+                  "href":""
+                  },
+                "Carrying Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/carrying-tool.png",
+                  "p":"Carrying Tools",
+                  "href":""
+                  },
+                "Storage Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/storagetools.png",
+                  "p":"Storage Tools",
+                  "href":""
+                  },
+                "Installation Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/installationtools.png",
+                  "p":"Installation Tools",
+                  "href":""
+                  }
+                }
+              }
+            }
+        },
+      "stone":{
+        "categories":{
+            
+            "Cutting":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/cutting.png",
+              "p":"Cutting",
+              "categories":{
+                "Saw Blade":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/saw-blade.png",
+                  "p":"Saw Blade",
+                  "href":""
+                  },
+                "Drill Bits":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/drill-bits.png",
+                  "p":"Drill Bits",
+                  "href":""
+                  },
+                "Profiling Bits":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/profilingbits.png",
+                  "p":"Profiling Bits",
+                  "href":""
+                  },
+                "Wire Ropes":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Wire-Ropes.png",
+                  "p":"Wire Ropes",
+                  "href":""
+                  },
+                "Texturing Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Texturing-Tools.png",
+                  "p":"Texturing Tools",
+                  "href":""
+                  }
+                }
+              },
+            "Polishing":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Polishing.png",
+              "p":"Polishing",
+              "categories":{
+                "Grinding Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Grinding_tools.png",
+                  "p":"Grinding Tools",
+                  "href":""
+                  },
+                "Diamond Polishing Pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/diamond-polishing-Pads.png",
+                  "p":"Diamond Polishing Pads",
+                  "href":""
+                  },
+                "Floor Polishing":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Floor-Polishing.png",
+                  "p":"Floor Polishing",
+                  "href":""
+                  },
+                "Sponge Polishing Pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Sponge-Polishing-Pad.png",
+                  "p":"Sponge Polishing Pads",
+                  "href":""
+                  },
+                "Electro Plated Polishing pads":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/ElectroPlatedPolishingPads.png",
+                  "p":"Electro Plated Polishing pads",
+                  "href":""
+                  }
+                }
+              },
+            "Handling":{
+              "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Handling-Tools.png",
+              "p":"Handling",
+              "categories":{
+                "Lifting Clamps":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/Lifting-Clamp.webp",
+                  "p":"Lifting Clamps",
+                  "href":""
+                  },
+                "Carrying Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/carrying-tool.png",
+                  "p":"Carrying Tools",
+                  "href":""
+                  },
+                "Storage Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/storagetools.png",
+                  "p":"Storage Tools",
+                  "href":""
+                  },
+                "Installation Tools":{
+                  "image":"http://www.stonetechinc.co/wp-content/uploads/2021/12/installationtools.png",
+                  "p":"Installation Tools",
+                  "href":""
+                  }
+                }
+              }
+            }
+        }
+    }
+    window.onload=fun("stone");
+    var result=[];
+    function mainScreen1(value1,value){
+      result[0]=value1;
+      result[1]=value;
+      var html=`
+        <div style="display:flex;width:100%;justify-content:flex-start;"><button onclick='fun("stone")'><img data-skip-lazy class="skip-lazy"  src="http://www.stonetechinc.co/wp-content/uploads/2021/12/back.png"/></button></div>
+        <h1>Material being used?</h1>
+        <div id="innerDiv">
+          <div id="category" onmousedown="fun1('${value1}','${value}')">
+            <p>Tile</p>
+            <img data-skip-lazy class="skip-lazy"  src="http://www.stonetechinc.co/wp-content/uploads/2021/12/Tiles.png"/>
+          </div>
+          <div id="category" onmousedown="fun1('${value1}','${value}')">
+            <p>Stone</p>
+            <img data-skip-lazy class="skip-lazy"  src="http://www.stonetechinc.co/wp-content/uploads/2021/12/stone.png"/>
+          </div>
+        </div>
+        `;
+      
+      document.getElementById("mainDiv").innerHTML=html;
+    }
+    function fun(value){
+      var html=`
+        <h1>What do you want to use it for?</h1>
+        <div id="innerDiv">`;
+      Object.entries(category[value]["categories"]).map(([item,val])=>{
+        html+=`<div id='category' onmousedown=mainScreen1('${value}','${item}')>
+          <p>${val['p']}</p>
+          <img data-skip-lazy class="skip-lazy"  src='${val['image']}'/>
+          </div>`
+      })
+      html+="</div>";
+      document.getElementById("mainDiv").innerHTML=html;
+      document.getElementById("innerDiv").style.animation="zoom1 0.5s linear";
+      document.querySelector("#mainDiv h1").style.animation="zoom1 0.5s linear"
+    }
+  
+    function fun1(value1,value){
+      var html=`<div style="display:flex;width:100%;justify-content:flex-start;"><button onclick="mainScreen1('${result[0]}','${result[1]}')" style=""><img data-skip-lazy class="skip-lazy"  src="http://www.stonetechinc.co/wp-content/uploads/2021/12/back.png"/></button></div>
+        <h1>Can you specify the Category?</h1>
+        <div id="innerDiv">`;
+      Object.entries(category[value1]["categories"][value]["categories"]).map(([item,val])=>{
+        html+=`<a href="${val['href']}" id='category'>
+          <p>${val['p']}</p>
+          <img data-skip-lazy class="skip-lazy"  src='${val['image']}'/>
+          </a>`
+      })
+      html+="</div>";
+      document.getElementById("mainDiv").innerHTML=html;
+      document.getElementById("innerDiv").style.animation="zoom 0.5s linear";
+      document.querySelector("#mainDiv h1").style.animation="zoom 0.5s linear"
+    }
+    
+  </script>
+  
+      
+  
+
   <form data-multi-step class="multi-step-form">
 
     <div class="card page" data-step>
