@@ -1,0 +1,123 @@
+<form data-multi-step class="multi-step-form">
+    
+
+    <div class="card page" data-step>
+      <h1 class="step-title">See how much water you save in a year</h1>
+
+      <button class="button btn btn-secondary" type="button" data-next>Explore</button>
+    </div>
+
+
+<!-- div 2 -->
+    <div class="card page row" data-step>
+      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+        <h1 class="step-title ">Enter Rooftop Area</h1>
+        <br>
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
+ 
+        <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+        <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
+        <br>
+        <br>
+        <br>
+
+        <div class="form-grp2">
+          <button type="button" class="button" data-previous>CONTINUE BACK</button>
+          <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button>
+        </div>
+
+        <!-- <button type="button" class="button " data-previous>CONTINUE BACK</button>
+        <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button> -->
+
+        <br><br>
+        <br>
+      </div>
+     
+        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
+        
+
+      </div>
+      
+   
+
+<!-- div 2 ends -->
+
+
+    <div class="card" data-step>
+
+      <div class="row">
+
+        <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
+         
+          <h1 class="step-title ">Select Your City</h1>
+
+          <div class="form-group">
+            <div class="input-group mb-3 ">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">City</label>
+              </div>
+              <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+                <option selected>Choose Your City</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+          <br />
+          <div id="map2" style=" 
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height:500px;
+        width: 500px;
+        z-index: 1000
+      ">
+
+          </div>
+
+
+          <div class="form-grp2">
+            <button type="button" class="button" data-previous>CONTINUE BACK</button>
+            <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
+          </div>
+
+        </div>
+
+        <div id="map" class="col-sm-6">
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="card page enddiv" data-step>
+      
+      <div
+
+       id="lastpage"
+       style="position:absolute;
+         color:black;
+         right:85px;
+         bottom: 400px;
+         font-weight: 600;
+         width: 300px;
+       "
+
+      >
+        <h3>
+        Hurray!!
+        <br/>
+        You saved around 80 liters
+       </h3>
+      </div>
+     <button class="button btn btn-secondary" type="submit">Go back</button>
+   </div>
+    
+
+  </form>
