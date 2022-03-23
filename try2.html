@@ -1,3 +1,259 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<style>
+  #body{
+        width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+	#mainDiv{
+		color:black;
+		background:white;
+		width:100%;
+		border:3px solid transparent;
+		border-radius:10px;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-around;
+		align-items:center;
+	}
+  body {
+    font-family: 'Montserrat';
+  }
+
+   .enddiv{
+     background-image: url("harvesting.png");
+     background-size: cover;
+     overflow: hidden;
+     color: black;
+   }
+
+  .img-fluid {
+    width: 65%;
+
+    height: auto;
+  }
+
+  @media (max-width: 500px) {
+    .card {
+      text-align: center;
+      padding: 5px;
+
+    }
+  }
+
+  @media (max-width: 500px) {
+    .img-fluid {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .container {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+    }
+  }
+
+  @media (max-width: 500px) {
+    .page2 {
+      display: block;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .form-control {
+        text-align: center;
+
+      }
+
+
+
+    }
+
+    .form-grp2 {
+      justify-content: center;
+      padding: auto;
+    }
+
+  }
+
+
+
+  .card {
+    background-color: #9e9e9e;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    animation: fade 250ms ease-in-out forwards;
+  }
+
+  .page {
+    height: 100vh;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: "#9e9e9e";
+  }
+
+  .page2 {
+
+    height: 100vh;
+    /* display: flex; */
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+    background-color: "#9e9e9e";
+  }
+
+  .button {
+    display: table-cell;
+    background-color: #68cbc1;
+    color: white;
+    /* // width: "100%", */
+    max-width: 250px;
+    /* // display: "flex", */
+    font-weight: 700;
+    border-style: none;
+    padding: 1em;
+    border-radius: 999px 999px 999px 999px;
+    box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    margin-bottom: 0.5rem;
+    gap: 0.25em;
+  }
+
+  .form-grp2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* flex-direction: column; */
+    margin-bottom: 0.5rem;
+    gap: 0.25em;
+  }
+
+  .form-group:last-child {
+    margin: 0;
+  }
+
+  .form-group>label {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #333;
+  }
+
+  .form-group>input {
+    border: 1px solid #333;
+    border-radius: 0.25em;
+    font-size: 1rem;
+    padding: 0.25em;
+  }
+
+  .step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    /* text-align: center; */
+    color: white;
+  }
+
+  .card.active {
+    animation: slide 250ms 125ms ease-in-out both;
+  }
+
+  .multi-step-form {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mapleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mapbutton {
+    display: none;
+    /* @media (max-width: 768px) {
+  display: block;
+} */
+  }
+
+  .roofbutton{
+      display: none;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .mapbutton {
+      display: block;
+    }
+    .roofbutton{
+      display: block;
+    }
+
+    .roofbutton2{
+      display:none;
+    }
+
+  }
+
+  .hide {
+    display: none;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(0.75);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+</style>
+
 <div id="body">
 	<div id="mainDiv">
 <form data-multi-step class="multi-step-form">
