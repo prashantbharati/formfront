@@ -51,6 +51,64 @@
       /* text-align: center; */
       color: white;
     }
+
+    .mapleft {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mapbutton {
+      display: none;
+      /* @media (max-width: 768px) {
+    display: block;
+  } */
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+      }
+    }
+
+    .roofbutton{
+        display: none;
+    }
+
+    .step-title {
+      margin: 0;
+      margin-bottom: 1rem;
+      /* text-align: center; */
+      color: white;
+    }
+
+    .img-fluid {
+      width: 65%;
+
+      height: auto;
+    }
+    .form-grp2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* flex-direction: column; */
+      margin-bottom: 0.5rem;
+      gap: 0.25em;
+    }
+
+    @media (max-width: 500px) {
+
+      .form-grp2 {
+        justify-content: center;
+        padding: auto;
+      }
+
+    }
+
 </style>
     
 <div id="body">
@@ -74,7 +132,34 @@
     function fun2()
     {
         let html2=`
-            <div>Enter area</div>
+        <div class="card page row" data-step>
+      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+        <h1 class="step-title ">Enter Rooftop Area</h1>
+        <br>
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
+ 
+        <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+        <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
+        <br>
+        <br>
+        <br>
+
+        <div class="form-grp2">
+          <button type="button" class="button" data-previous>CONTINUE BACK</button>
+          <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button>
+        </div>
+
+        <!-- <button type="button" class="button " data-previous>CONTINUE BACK</button>
+        <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button> -->
+
+        <br><br>
+        <br>
+      </div>
+     
+        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
+        
+
+      </div>
         `;
         document.getElementById("body").innerHTML=html2;
     }
