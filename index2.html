@@ -148,11 +148,64 @@
 
 
 <div id="body">
-    lol
+  <div id="body1">
 
- <div id="map" style="height:500px"></div>
- <div id="map2"></div>
+  </div>
+   
+  <div id="mappart" style="display:none">
+    <div class="card" data-step>
 
+      <div class="row">
+
+      <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
+   
+      <h1 class="step-title ">Select Your City</h1>
+
+     <div class="form-group">
+       <div class="input-group mb-3 ">
+           <div class="input-group-prepend">
+           <label class="input-group-text" for="inputGroupSelect01">City</label>
+         </div>
+          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+            <option selected>Choose Your City</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+         </select>
+        </div>
+      </div>
+
+    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+    <br />
+    <div id="map2" style=" 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height:500px;
+  width: 500px;
+  z-index: 1000
+">
+
+    </div>
+
+
+    <div class="form-grp2">
+      <button type="button" class="button" data-previous>CONTINUE BACK</button>
+      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
+    </div>
+
+  </div>
+
+  <div id="map" class="col-sm-6">
+
+  </div>
+  
+
+
+</div>
+
+</div>
+</div>
 </div>
 
 
@@ -359,17 +412,29 @@ const cities = [ {
 
 let val;
 let ccity;
+let htmlmap;
      function fun()
     {
-    //     let html1=`<div class="card page" data-step>
-    //   <h1 class="step-title">See how much water you save in a year</h1>
+      let html4;
 
-    //   <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
-    // </div>`
-    //     document.getElementById("body").innerHTML=html1;
+html4 += `
+        <option selected></option>`;
+cities.map((city) => {
+  html4 += `<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
+});
+
+document.getElementById("inputGroupSelect01").innerHTML = html4;
+       htmlmap=document.getElementById("body1").innerHTML;
+       console.log(htmlmap,"htmlmap")
+        let html1=`<div class="card page" data-step>
+      <h1 class="step-title">See how much water you save in a year</h1>
+
+      <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
+    </div>`
+        document.getElementById("body1").innerHTML=html1;
     }
 
-    // window.onload=fun();
+    window.onload=fun();
 
     function fun2()
     {
@@ -403,7 +468,7 @@ let ccity;
 
       </div>
         `;
-        document.getElementById("body").innerHTML=html2;
+        document.getElementById("body1").innerHTML=html2;
 
         
     }
@@ -421,73 +486,14 @@ let ccity;
       
    function fun3()
       {
-        let html3=`<div class="card" data-step>
+        let html3=htmlmap;
+        document.getElementById("body1").style.display="none";
 
-      <div class="row">
+        document.getElementById("mappart").style.display="flex";
 
-      <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
-   
-      <h1 class="step-title ">Select Your City</h1>
-
-     <div class="form-group">
-       <div class="input-group mb-3 ">
-           <div class="input-group-prepend">
-           <label class="input-group-text" for="inputGroupSelect01">City</label>
-         </div>
-          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
-            <option selected>Choose Your City</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-         </select>
-        </div>
-      </div>
-
-    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
-    <br />
-    <div id="map2" style=" 
-  display: none;
-  align-items: center;
-  justify-content: center;
-  height:500px;
-  width: 500px;
-  z-index: 1000
-">
-
-    </div>
-
-
-    <div class="form-grp2">
-      <button type="button" class="button" data-previous>CONTINUE BACK</button>
-      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
-    </div>
-
-  </div>
-
-  <div id="map" class="col-sm-6">
-
-  </div>
-  
-
-
-</div>
-
-</div>`
-        document.getElementById("body").innerHTML=html3;
-
-//Map dropdown
-        let html4;
-
-html4 += `
-        <option selected></option>`;
-cities.map((city) => {
-  html4 += `<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
-});
-
-document.getElementById("inputGroupSelect01").innerHTML = html4;
-   
+//Map dropdown   
     
-}
+      }
 
       function changeLanguage(value) {
       ccity = value;
