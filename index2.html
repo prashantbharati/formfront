@@ -145,153 +145,20 @@
     }
 
 </style>
-    
+
+
 <div id="body">
     lol
+
+ <div id="map"></div>
+ <div id="map2"></div>
+
 </div>
 
 
 <script>
 
-let val;
-let ccity;
-     function fun()
-    {
-        let html1=`<div class="card page" data-step>
-      <h1 class="step-title">See how much water you save in a year</h1>
-
-      <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
-    </div>`
-        document.getElementById("body").innerHTML=html1;
-    }
-
-    window.onload=fun();
-
-    function fun2()
-    {
-        let html2=`
-        <div class="card page row" data-step>
-      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
-        <h1 class="step-title ">Enter Rooftop Area</h1>
-        <br>
-        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
- 
-        <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
-        <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
-        <br>
-        <br>
-        <br>
-
-        <div class="form-grp2">
-          <button type="button" class="button"onmousedown=fun()>CONTINUE BACK</button>
-          <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button>
-        </div>
-
-        <!-- <button type="button" class="button " data-previous>CONTINUE BACK</button>
-        <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button> -->
-
-        <br><br>
-        <br>
-      </div>
-     
-        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
-        
-
-      </div>
-        `;
-        document.getElementById("body").innerHTML=html2;
-
-        
-    }
-    
-      function getval(){
-        val=document.getElementById("ifield").value;
-        console.log(val);
-
-          fun3();
-
-          
-
-        }
-
-      
-      function fun3()
-      {
-        let html3=`<div class="card" data-step>
-
-      <div class="row">
-
-      <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
-   
-      <h1 class="step-title ">Select Your City</h1>
-
-     <div class="form-group">
-       <div class="input-group mb-3 ">
-           <div class="input-group-prepend">
-           <label class="input-group-text" for="inputGroupSelect01">City</label>
-         </div>
-          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
-            <option selected>Choose Your City</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-         </select>
-        </div>
-      </div>
-
-    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
-    <br />
-    <div id="map2" style=" 
-  display: none;
-  align-items: center;
-  justify-content: center;
-  height:500px;
-  width: 500px;
-  z-index: 1000
-">
-
-    </div>
-
-
-    <div class="form-grp2">
-      <button type="button" class="button" data-previous>CONTINUE BACK</button>
-      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
-    </div>
-
-  </div>
-
-  <div id="map" class="col-sm-6">
-
-  </div>
-
-
-
-</div>
-
-</div>`
-        document.getElementById("body").innerHTML=html3;
-
-
-        let html4;
-
-html4 += `
-        <option selected></option>`;
-cities.map((city) => {
-  html4 += `<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
-});
-
-document.getElementById("inputGroupSelect01").innerHTML = html4;
-
-      }
-
-     
-      function changeLanguage(value) {
-      ccity = value;
-      console.log(ccity);
-    }
-
-    const cities = [
-      {
+const cities = [ {
         ID: 1,
         Name: "Shimla",
         geometry: [31.104815, 77.173401],
@@ -490,10 +357,218 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
     ];
 
 
+let val;
+let ccity;
+     function fun()
+    {
+    //     let html1=`<div class="card page" data-step>
+    //   <h1 class="step-title">See how much water you save in a year</h1>
+
+    //   <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
+    // </div>`
+    //     document.getElementById("body").innerHTML=html1;
+    }
+
+    // window.onload=fun();
+
+    function fun2()
+    {
+        let html2=`
+        <div class="card page row" data-step>
+      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+        <h1 class="step-title ">Enter Rooftop Area</h1>
+        <br>
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
+ 
+        <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+        <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
+        <br>
+        <br>
+        <br>
+
+        <div class="form-grp2">
+          <button type="button" class="button"onmousedown=fun()>CONTINUE BACK</button>
+          <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button>
+        </div>
+
+        <!-- <button type="button" class="button " data-previous>CONTINUE BACK</button>
+        <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button> -->
+
+        <br><br>
+        <br>
+      </div>
+     
+        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
+        
+
+      </div>
+        `;
+        document.getElementById("body").innerHTML=html2;
+
+        
+    }
     
+      function getval(){
+        val=document.getElementById("ifield").value;
+        console.log(val);
+
+          fun3();
+
+          
+
+        }
+
+      
+   function fun3()
+      {
+        let html3=`<div class="card" data-step>
+
+      <div class="row">
+
+      <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
+   
+      <h1 class="step-title ">Select Your City</h1>
+
+     <div class="form-group">
+       <div class="input-group mb-3 ">
+           <div class="input-group-prepend">
+           <label class="input-group-text" for="inputGroupSelect01">City</label>
+         </div>
+          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+            <option selected>Choose Your City</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+         </select>
+        </div>
+      </div>
+
+    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+    <br />
+    <div id="map2" style=" 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height:500px;
+  width: 500px;
+  z-index: 1000
+">
+
+    </div>
+
+
+    <div class="form-grp2">
+      <button type="button" class="button" data-previous>CONTINUE BACK</button>
+      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
+    </div>
+
+  </div>
+
+  <div id="map" class="col-sm-6">
+
+  </div>
+  
+
+
+</div>
+
+</div>`
+        document.getElementById("body").innerHTML=html3;
+
+//Map dropdown
+        let html4;
+
+html4 += `
+        <option selected></option>`;
+cities.map((city) => {
+  html4 += `<option value="${city.Name}" onclick="ccity=${city.Name} ${console.log(ccity)}" >${city.Name}</option>`
+});
+
+document.getElementById("inputGroupSelect01").innerHTML = html4;
+   
+    
+}
+
+      function changeLanguage(value) {
+      ccity = value;
+      console.log(ccity);
+    }
+
+
+//Map scripts
+
+function maphide() {
+      document.getElementById("map2").style.display = "flex";
+    }
+
+    
+    // google.maps.event.addDomListener(marker, 'click', function () {
+    //   // ccity=city
+    //   console.log(ccity, "love iyt")
+    // });
+
 
 
 </script>
+
+<script>
+  function initmap() {
+
+
+var location = { lat: 21.145800, lng: 79.088158 };
+var map = new google.maps.Map(document.getElementById("map"), {
+  zoom: 5,
+  center: location
+});
+
+var map2 = new google.maps.Map(document.getElementById("map2"), {
+  zoom: 5,
+  center: location
+});
+
+cities.map((city) => {
+  var marker = new google.maps.Marker({
+    position: {
+      lat: city.geometry[0],
+      lng: city.geometry[1]
+    },
+    map: map
+  });
+  marker.addListener("click", () => {
+    ccity = city.Name;
+
+    // document.getElementById("inputGroupSelect01").value = ccity;
+    // console.log(ccity);
+  });
+})
+
+
+cities.map((city) => {
+  var marker = new google.maps.Marker({
+    position: {
+      lat: city.geometry[0],
+      lng: city.geometry[1]
+    },
+    map: map2
+  });
+  marker.addListener("click", () => {
+    ccity = city.Name;
+
+    // document.getElementById("inputGroupSelect01").value = ccity;
+    // document.getElementById("map2").style.display = "none";
+    console.log(ccity);
+  });
+})
+
+
+}
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap">
+
+  </script>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
