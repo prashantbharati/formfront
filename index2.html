@@ -8,6 +8,13 @@
       font-family: 'Montserrat';
     }
 
+    .enddiv{
+       background-image: url("harvesting.png");
+       background-size: cover;
+       overflow: hidden;
+       color: black;
+     }
+
     .card {
       background-color: #9e9e9e;
       border: 1px solid #333;
@@ -191,7 +198,7 @@
 
     <div class="form-grp2">
       <button type="button" class="button" data-previous>CONTINUE BACK</button>
-      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
+      <button type="button" class="button" onclick="fun4()" data-next>CONTINUE NEXT</button>
     </div>
 
   </div>
@@ -495,6 +502,37 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
     
       }
 
+    function fun4()
+    {
+      let htmlend=`
+      <div class="card page enddiv" data-step>
+      
+      <div
+
+       id="lastpage"
+       style="position:absolute;
+         color:black;
+         right:85px;
+         bottom: 400px;
+         font-weight: 600;
+         width: 300px;
+       "
+
+      >
+        <h3>
+        Hurray!!
+        <br/>
+        You saved around 80 liters
+       </h3>
+      </div>
+     <button class="button btn btn-secondary" onmousedown="fun()" type="submit">Go back</button>
+   </div>
+      `
+     document.getElementById("body").innerHTML=htmlend;
+     change();
+
+    }
+
       function changeLanguage(value) {
       ccity = value;
       console.log(ccity);
@@ -512,6 +550,29 @@ function maphide() {
     //   // ccity=city
     //   console.log(ccity, "love iyt")
     // });
+
+    function change(){ 
+
+let nccity=cities.filter((city)=>{
+  if(city.Name===ccity)
+  return city;
+})
+
+let val2=val*0.092;
+let ans=Math.floor(val2*nccity[0].rain*0.9);
+
+console.log(nccity);
+console.log(val2,nccity[0].rain,"lololoitit");
+console.log(ans);
+let htmlend1=`<h3>
+   Hurray!!
+   <br/>
+   You saved around ${ans} liters
+  </h3>`;
+
+document.getElementById("lastpage").innerHTML=htmlend1;
+}
+
 
 
 
