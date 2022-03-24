@@ -189,9 +189,77 @@
       </div>
         `;
         document.getElementById("body").innerHTML=html2;
+
+        let val;
     }
 
-    
+      function getval(){
+        val=document.getElementById("ifield").value;
+        console.log(val);
+
+          fun3();
+
+          
+
+        }
+
+      
+      function fun3()
+      {
+        let html3=`<div class="card" data-step>
+
+    <div class="row">
+
+    <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
+   
+    <h1 class="step-title ">Select Your City</h1>
+
+    <div class="form-group">
+      <div class="input-group mb-3 ">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">City</label>
+        </div>
+        <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+          <option selected>Choose Your City</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+    <br />
+    <div id="map2" style=" 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height:500px;
+  width: 500px;
+  z-index: 1000
+">
+
+    </div>
+
+
+    <div class="form-grp2">
+      <button type="button" class="button" data-previous>CONTINUE BACK</button>
+      <button type="button" class="button" onclick="change()" data-next>CONTINUE NEXT</button>
+    </div>
+
+  </div>
+
+  <div id="map" class="col-sm-6">
+
+  </div>
+
+
+
+</div>
+
+</div>`
+        document.getElementById("body").innerHTML=html3;
+      }
 
     
 
