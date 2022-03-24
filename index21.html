@@ -1,14 +1,15 @@
 <div id="body">
     lol
 
- <div id="map"></div>
+ <div id="map" style="height:500px"></div>
  <div id="map2"></div>
 
 </div>
 <script>
-let ccity;
 
-const cities = [
+function initmap() {
+
+  const cities = [
       {
         ID: 1,
         Name: "Shimla",
@@ -207,9 +208,6 @@ const cities = [
       },
     ];
 
-function initmap() {
-
-
     var location = { lat: 21.145800, lng: 79.088158 };
     var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 5,
@@ -260,6 +258,6 @@ function initmap() {
 </script>
 
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5Aso4gf3WsHfCVgP8kDm3jKN0Pz1po0Y&&callback=initmap">
 
-  </script>
+</script>
