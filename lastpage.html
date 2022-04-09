@@ -1,0 +1,61 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+<style>
+    .enddiv{
+   background-image: url("rh.jpg");
+   background-size: cover;
+   overflow: hidden;
+   color: black;
+   height:100vh;
+ }
+
+.lastpagediv{
+  position:absolute;
+     color:black;
+     right:85px;
+     bottom: 400px;
+     font-weight: 600;
+     width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+ .enddiv{
+  background-image: url("rh1.jpg");
+  position:relative;
+   background-size: cover;
+   overflow: hidden;
+   color: black;
+ }
+
+ .lastpagediv{
+  position:absolute;
+     color:black;
+     right:85px;
+     bottom: 400px;
+     font-weight: 600;
+     width: 300px;
+ }
+
+}
+</style>
+
+<div class="card page enddiv" data-step>
+  
+  <div
+
+   id="lastpage"
+   class="lastpagediv"
+  >
+    <h3>
+    Hurray!!
+    <br/>
+    You saved around 80 liters
+   </h3>
+
+  </div>
+ <button class="button btn btn-secondary" type="submit">Go back</button>
+</div>
