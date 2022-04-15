@@ -199,7 +199,7 @@
 
 
     <div class="form-grp2">
-      <button type="button" class="button" data-previous>BACK</button>
+      <button type="button" class="button" onmousedown=fun2() data-previous>BACK</button>
       <button type="button" class="button" onclick="fun4()" data-next>NEXT</button>
     </div>
 
@@ -465,9 +465,7 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
           <button type="button" class="button" onclick="getval()" data-next>NEXT</button>
         </div>
 
-        <!-- <button type="button" class="button " data-previous>BACK</button>
-        <button type="button" class="button" onclick="getval()" data-next>NEXT</button> -->
-
+        
         <br><br>
         <br>
       </div>
@@ -477,6 +475,8 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
 
       </div>
         `;
+        document.getElementById("mappart").style.display="none";
+        document.getElementById("body1").style.display="block";
         document.getElementById("body1").innerHTML=html2;
 
         
