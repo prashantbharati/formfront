@@ -16,7 +16,7 @@
      }
 
     .cardofform {
-      background-color: #9e9e9e;
+      background:linear-gradient(to right,#d2ccc4,#2f4353);
       border: 1px solid #333;
       border-radius: 0.5rem;
       padding: 0.5rem;
@@ -51,15 +51,17 @@
       background-color: #68cbc1;
       color: white;
       /* // width: "100%", */
-      width: 150px;
+      width: 200px;
       /* // display: "flex", */
       font-weight: 700;
+      font-size: 20px;
       border-style: none;
-      padding: 1em;
-      margin: 10px;
+      padding: 0.5em;
       border-radius: 999px 999px 999px 999px;
       box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
     }
+
+    
 
     .step-title {
       margin: 0;
@@ -449,28 +451,33 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
     {
         let html2=`
         <div class="cardofform pageofform row" data-step>
-      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+          <div style="height:100%;width:100%" >
+        <div style="height:100%;width:100%;background-image:url(./images/roofnew.png);background-size: cover;background-repeat: no-repeat; display: flex;flex-direction: column;justify-content: center;align-items: center;">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
-        <img class="img-fluid roofbutton" src="http://www.rainmax.co.in/wp-content/uploads/2022/03/houseimg.png" alt="">
- 
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
+        <div style="width:380px;height:20px;">
         <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+      </div>
         <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
         <br>
         <br>
         <br>
 
         <div class="form-grp2">
-          <button type="button" class="button"onmousedown=fun()>BACK</button>
-          <button type="button" class="button" onclick="getval()" data-next>NEXT</button>
+          <button type="button" class="button" data-previous> BACK</button>
+          &nbsp; &nbsp; &nbsp;
+          <button type="button" class="button" onclick="getval()" data-next> NEXT</button>
         </div>
+      </div>
 
-        
+        <!-- <button type="button" class="button " data-previous> BACK</button>
+        <button type="button" class="button" onclick="getval()" data-next> NEXT</button> -->
+
         <br><br>
         <br>
       </div>
      
-        <img class="img-fluid roofbutton2" src="http://www.rainmax.co.in/wp-content/uploads/2022/03/houseimg.png" alt="">
         
 
       </div>

@@ -16,7 +16,9 @@
 
 </head>
 
-<body>
+<body style = " margin:0;
+padding:0;
+box-sizing: border-box;overflow: hidden;">
 
   <style>
     body {
@@ -262,12 +264,14 @@
 
 <!-- div 2 -->
     <div class="card page row" data-step>
-      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+      <div style="height:100%;width:100%" >
+        <div style="height:100%;width:100%;background-image:url(./images/roofnew.png);background-size: cover;background-repeat: no-repeat; display: flex;flex-direction: column;justify-content: center;align-items: center;">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
         <img class="img-fluid roofbutton" src="houseimg.png" alt="">
- 
+        <div style="width:350px">
         <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+      </div>
         <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
         <br>
         <br>
@@ -277,6 +281,7 @@
           <button type="button" class="button" data-previous>CONTINUE BACK</button>
           <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button>
         </div>
+      </div>
 
         <!-- <button type="button" class="button " data-previous>CONTINUE BACK</button>
         <button type="button" class="button" onclick="getval()" data-next>CONTINUE NEXT</button> -->
@@ -285,7 +290,7 @@
         <br>
       </div>
      
-        <img class="img-fluid roofbutton2" src="houseimg.png" alt="">
+        
         
 
       </div>
