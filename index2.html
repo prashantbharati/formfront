@@ -554,43 +554,45 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
     // </div>
 
       let htmlend=`
+      <div style="height:100%;width:100%">
       <div
       style=" 
-        height: 100vh;
+        height: 100%;
         width: 100%;
-        background-image: url("http://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg");
-
-        backgroundSize: 100% 100%;
+        background-image: url(./images/lastnew1.jpg);
+        background-size: cover;
+       overflow: hidden;
+       color: black;
       " 
     >
       <div
       id="lastpageofform"
         style=" 
-          height: 250px;
-          width: 250px;
-          borderRadius: 50%;
-          backgroundColor: green;
+          height: 260px;
+          width: 260px;
+          border-radius: 50%;
+          background-color: green;
           overflow: hidden;
           display: flex;
-          flexDirection: column;
-          justifyContent: center;
-          alignItems: center;
-          textAlign: center;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
           position: absolute;
           right: 20%;
           top: 20%;
+         
         " 
       >
-        <Typography style={{ color: "white" }} variant="h4">
-          Hurray!!
-        </Typography>
-        <Typography style={{ color: "white" }} variant="h4">
-          You saved around
-          80 litres
-        </Typography>
+      <h3>
+   Hurray!!
+   <br/>
+   You saved around 80 liters
+  </h3>
+        </div>
       </div>
     </div>
-
+    </div>
       `
      document.getElementById("body").innerHTML=htmlend;
      change();
