@@ -204,6 +204,7 @@
 
     <div class="form-grp2">
       <button type="button" class="button" onmousedown=fun2() data-previous>BACK</button>
+      &nbsp; &nbsp; &nbsp;
       <button type="button" class="button" onclick="fun4()" data-next>NEXT</button>
     </div>
 
@@ -440,8 +441,9 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
        htmlmap=document.getElementById("body1").innerHTML;
        console.log(htmlmap,"htmlmap")
         let html1=`<div class="cardofform pageofform" data-step>
-      <h1 class="step-title">See how much water you save in a year</h1>
-
+      <h1 class="step-title">See How much </h1>
+      <h1 class="step-title">Water you save in a year</h1>
+      <br/>
       <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
     </div>`
         document.getElementById("body1").innerHTML=html1;
@@ -554,12 +556,12 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
     // </div>
 
       let htmlend=`
-      <div style="height:100%;width:100%">
+      <div style="height:100vh;width:100%">
       <div
       style=" 
         height: 100%;
         width: 100%;
-        background-image: url(./images/lastnew1.jpg);
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-min-scaled.jpg);
         background-size: cover;
        overflow: hidden;
        color: black;
@@ -630,11 +632,11 @@ let ans=Math.floor(val2*nccity[0].rain*0.9);
 console.log(nccity);
 console.log(val2,nccity[0].rain,"lololoitit");
 console.log(ans);
-let htmlend1=`<h3>
+let htmlend1=`<h2>
    Hurray!!
    <br/>
    You saved around ${ans} liters
-  </h3>`;
+  </h2>`;
 
 document.getElementById("lastpageofform").innerHTML=htmlend1;
 }
