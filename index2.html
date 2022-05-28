@@ -166,10 +166,19 @@
       height:100%;
         width:100%;
         background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg);
-        /* background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew1.jpg); */
+       
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+
+    .lastnewdiv{
+      height: 100%;
+        width: 100%;
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg);
+        background-size: cover;
+       overflow: hidden;
+       color: black;
     }
 
     @media (max-width: 500px) {
@@ -177,7 +186,7 @@
       .roofdiv{
       height:100%;
         width:100%;
-        /* background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg); */
+       
         background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew1.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -607,14 +616,7 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
       let htmlend=`
       <div style="height:100vh;width:100%">
       <div
-      style=" 
-        height: 100%;
-        width: 100%;
-        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg);
-        background-size: cover;
-       overflow: hidden;
-       color: black;
-      " 
+      class="lastnewdiv"
     >
       <div
       id="lastpageofform"
