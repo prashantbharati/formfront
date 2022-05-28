@@ -162,6 +162,32 @@
 
     }
 
+    .roofdiv{
+      height:100%;
+        width:100%;
+        background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg);
+        /* background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew1.jpg); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+
+    @media (max-width: 500px) {
+
+      .roofdiv{
+      height:100%;
+        width:100%;
+        /* background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg); */
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+
+}
+
+
+
 </style>
 
 
@@ -479,12 +505,7 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
         <div class="cardofform pageofform row" data-step>
           <div style="height:100%;width:100%" >
         <div 
-        style="height:100%;
-        width:100%;
-        background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        class="roofdiv">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
         <img class="img-fluid roofbutton" src="houseimg.png" alt="">
