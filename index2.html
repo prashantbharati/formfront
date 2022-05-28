@@ -4,8 +4,13 @@
 
 <style>
 
+*{
+  margin:0;
+}
+
 #body{
       font-family: 'Montserrat';
+      margin:0;
     }
 
     .enddiv{
@@ -172,19 +177,34 @@
 
       <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
    
+        <style type="text/css">
+          div.dropdown-menu.open
+          {
+              max-height: 10px !important;
+              overflow: hidden;
+          }
+          ul.dropdown-menu.inner
+          {
+              max-height: 10px !important;
+              overflow-y: auto;
+          }
+      </style>
+
       <h1 class="step-title ">Select Your City</h1>
       <br />
-     <div class="form-group">
+     <div class=" form-group ">
        <div class="input-group mb-3 ">
            <div class="input-group-prepend">
            <label class="input-group-text" for="inputGroupSelect01">City</label>
          </div>
-          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+         
+          <select class=" form-control form-control-lg custom-select" data-size="50" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
             <option selected>Choose Your City</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
          </select>
+       
         </div>
       </div>
 
@@ -451,12 +471,20 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
 
     window.onload=fun();
 
+    
+
     function fun2()
     {
         let html2=`
         <div class="cardofform pageofform row" data-step>
           <div style="height:100%;width:100%" >
-        <div style="height:100%;width:100%;background-image:url(http://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew.png);background-size: cover;background-repeat: no-repeat; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <div 
+        style="height:100%;
+        width:100%;
+        background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;flex-direction: column;justify-content: center;align-items: center;">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
         <img class="img-fluid roofbutton" src="houseimg.png" alt="">
@@ -469,7 +497,7 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
         <br>
 
         <div class="form-grp2">
-          <button type="button" class="button" data-previous> BACK</button>
+          <button type="button" class="button" onmousedown=fun()> BACK</button>
           &nbsp; &nbsp; &nbsp;
           <button type="button" class="button" onclick="getval()" data-next> NEXT</button>
         </div>
@@ -561,7 +589,7 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
       style=" 
         height: 100%;
         width: 100%;
-        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-min-scaled.jpg);
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg);
         background-size: cover;
        overflow: hidden;
        color: black;
@@ -587,9 +615,9 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
         " 
       >
       <h3>
-   Hurray!!
+  
    <br/>
-   You saved around 80 liters
+   Kindly Select the right attributes
   </h3>
         </div>
       </div>
