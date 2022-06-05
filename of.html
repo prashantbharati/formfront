@@ -4,19 +4,26 @@
 
 <style>
 
+*{
+  margin:0;
+}
+
 #body{
       font-family: 'Montserrat';
+      margin:0;
     }
 
     .enddiv{
-       background-image: url("http://www.rainmax.co.in/wp-content/uploads/2022/03/harvesting-1.png");
+       background-image: url("./images/lastnew1.jpg");
        background-size: cover;
        overflow: hidden;
        color: black;
+       height:100vh;
+       width:100%;
      }
 
     .cardofform {
-      background-color: #9e9e9e;
+      background:linear-gradient(to right,#d2ccc4,#2f4353);
       border: 1px solid #333;
       border-radius: 0.5rem;
       padding: 0.5rem;
@@ -37,7 +44,7 @@
     .pageofform {
       /* height: 100vh; */
       display: flex;
-      margin: auto;
+      margin-bottom:1000px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -51,15 +58,32 @@
       background-color: #68cbc1;
       color: white;
       /* // width: "100%", */
-      width: 150px;
+      width: 200px;
       /* // display: "flex", */
+      margin-top: 50px;
       font-weight: 700;
+      font-size: 20px;
       border-style: none;
-      padding: 1em;
-      margin: 10px;
+      padding: 0.5em;
       border-radius: 999px 999px 999px 999px;
       box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
     }
+
+    .button2{
+      display: table-cell;
+      background-color: #68cbc1;
+      color: white;
+      /* // width: "100%", */
+      width: 250px;
+      /* // display: "flex", */
+      font-weight: 700;
+      font-size: 20px;
+      border-style: none;
+      padding: 0.5em;
+      border-radius: 999px 999px 999px 999px;
+      box-shadow: 0px 5px 15px 0px rgb(39 48 112 / 51%);
+    }
+    
 
     .step-title {
       margin: 0;
@@ -140,7 +164,7 @@
       flex-direction: row;
       align-items: center;
       /* flex-direction: column; */
-      margin-bottom: 0.5rem;
+      margin-top: 2rem;
       gap: 0.25em;
     }
 
@@ -152,6 +176,55 @@
       }
 
     }
+
+    .roofdiv{
+      height:100%;
+        width:100%;
+        background-image:url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew-scaled.jpg);
+       
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+
+    .lastnewdiv{
+      height: 100%;
+        width: 100%;
+        /* background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew12.jpg); */
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg);
+        background-size: cover;
+       overflow: hidden;
+       color: black;
+    }
+
+    @media (max-width: 500px) {
+
+      .roofdiv{
+      height:100%;
+        width:100%;
+       
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/roofnew1.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;flex-direction: column;justify-content: center;align-items: center;
+    }
+
+   
+
+    @media (max-width: 450px) {
+      .lastnewdiv{
+      height: 100%;
+        width: 100%;
+        background-image: url(https://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew12.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+       color: black;
+    }
+    }
+
+}
+
+
 
 </style>
 
@@ -168,23 +241,38 @@
 
       <div class="col-md-6 col-sm-12 mapleft" style="height: 100vh;">
    
-      <h1 class="step-title ">Select Your City</h1>
+        <style type="text/css">
+          div.dropdown-menu.open
+          {
+              max-height: 10px !important;
+              overflow: hidden;
+          }
+          ul.dropdown-menu.inner
+          {
+              max-height: 10px !important;
+              overflow-y: auto;
+          }
+      </style>
 
-     <div class="form-group">
+      <h1 class="step-title ">Select Your City</h1>
+      <br /> <br/>
+     <div class=" form-group ">
        <div class="input-group mb-3 ">
            <div class="input-group-prepend">
            <label class="input-group-text" for="inputGroupSelect01">City</label>
          </div>
-          <select class="custom-select" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
+        
+          <select class=" form-control form-control-lg custom-select" data-size="50" onchange="changeLanguage(this.value)" id="inputGroupSelect01">
             <option selected>Choose Your City</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
          </select>
+       
         </div>
       </div>
-
-    <button type="button" class="button mapbutton" onclick="maphide()">SELECT FROM MAP</button>
+     <br/><br/>
+    <button type="button" class="button2 mapbutton" onclick="maphide()">SELECT FROM MAP</button>
     <br />
     <div id="map2" style=" 
   display: none;
@@ -199,7 +287,8 @@
 
 
     <div class="form-grp2">
-      <button type="button" class="button" data-previous>BACK</button>
+      <button type="button" class="button" onmousedown=fun2() data-previous>BACK</button>
+      &nbsp; &nbsp; &nbsp;
       <button type="button" class="button" onclick="fun4()" data-next>NEXT</button>
     </div>
 
@@ -436,8 +525,11 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
        htmlmap=document.getElementById("body1").innerHTML;
        console.log(htmlmap,"htmlmap")
         let html1=`<div class="cardofform pageofform" data-step>
-      <h1 class="step-title">See how much water you save in a year</h1>
-
+      <h1 class="step-title">See how much </h1>
+      <h1 class="step-title">water you save in a year</h1>
+      <br/>
+      <br/>
+      <br/>
       <button class="button btn btn-secondary" type="button" onmousedown=fun2() >Explore</button>
     </div>`
         document.getElementById("body1").innerHTML=html1;
@@ -445,38 +537,47 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
 
     window.onload=fun();
 
+    
+
     function fun2()
     {
         let html2=`
         <div class="cardofform pageofform row" data-step>
-      <div class="container mx-auto text-center align-items-center col-md-4 col-sm-12 mapleft">
+          <div style="height:100%;width:100%" >
+        <div 
+        class="roofdiv">
         <h1 class="step-title ">Enter Rooftop Area</h1>
         <br>
-        <img class="img-fluid roofbutton" src="http://www.rainmax.co.in/wp-content/uploads/2022/03/houseimg.png" alt="">
- 
+        <img class="img-fluid roofbutton" src="houseimg.png" alt="">
+        <br/>
+        <div style="width:350px;height:20px;">
         <input   id="ifield"  class="form-control input-normal"   placeholder="Area (sq feet)">
+      </div>
         <!-- <input  class=" form-control   col-7 text-center mx-auto " type="number" placeholder="Area (sq feet)"> -->
         <br>
         <br>
         <br>
 
         <div class="form-grp2">
-          <button type="button" class="button"onmousedown=fun()>BACK</button>
-          <button type="button" class="button" onclick="getval()" data-next>NEXT</button>
+          <button type="button" class="button" onmousedown=fun()> BACK</button>
+          &nbsp; &nbsp; &nbsp;
+          <button type="button" class="button" onclick="getval()" data-next> NEXT</button>
         </div>
+      </div>
 
-        <!-- <button type="button" class="button " data-previous>BACK</button>
-        <button type="button" class="button" onclick="getval()" data-next>NEXT</button> -->
+        <!-- <button type="button" class="button " data-previous> BACK</button>
+        <button type="button" class="button" onclick="getval()" data-next> NEXT</button> -->
 
         <br><br>
         <br>
       </div>
      
-        <img class="img-fluid roofbutton2" src="http://www.rainmax.co.in/wp-content/uploads/2022/03/houseimg.png" alt="">
         
 
       </div>
         `;
+        document.getElementById("mappart").style.display="none";
+        document.getElementById("body1").style.display="block";
         document.getElementById("body1").innerHTML=html2;
 
         
@@ -506,29 +607,78 @@ document.getElementById("inputGroupSelect01").innerHTML = html4;
 
     function fun4()
     {
+
+    //   <div
+    //   style=" 
+    //     height: 100vh;
+    //     width: 100%;
+    //     background-image: url(`http://www.rainmax.co.in/wp-content/uploads/2022/05/lastnew1-scaled.jpg`);
+
+    //     backgroundSize: 100% 100%;
+    //   " 
+    // >
+    //   <div
+    //   id="lastpageofform"
+    //     style=" 
+    //       height: 250px;
+    //       width: 250px;
+    //       borderRadius: 50%;
+    //       backgroundColor: green;
+    //       overflow: hidden;
+    //       display: flex;
+    //       flexDirection: column;
+    //       justifyContent: center;
+    //       alignItems: center;
+    //       textAlign: center;
+    //       position: absolute;
+    //       right: 20%;
+    //       top: 20%;
+    //     " 
+    //   >
+    //     <Typography style={{ color: "white" }} variant="h4">
+    //       Hurray!!
+    //     </Typography>
+    //     <Typography style={{ color: "white" }} variant="h4">
+    //       You saved around
+    //       {` ${fanswer}`} litres
+    //     </Typography>
+    //   </div>
+    // </div>
+
       let htmlend=`
-      <div class="cardofform pageofform enddiv" data-step>
-      
+      <div style="height:100vh;width:100%">
       <div
-
-       id="lastpageofform"
-       style="position:absolute;
-         color:black;
-         right:30px;
-         bottom: 350px;
-         font-weight: 600;
-         width: 300px;
-       "
-
+      class="lastnewdiv"
+    >
+      <div
+      id="lastpageofform"
+        style=" 
+          height: 260px;
+          width: 260px;
+          border-radius: 50%;
+          background-color: green;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          position: absolute;
+          
+          right: 20%;
+          top: 20%;
+         
+        " 
       >
-        <h3>
-        Hurray!!
-        <br/>
-        You saved around 80 liters
-       </h3>
+      <h3>
+  
+   <br/>
+   Kindly Select the right attributes
+  </h3>
+        </div>
       </div>
-     <button class="button btn btn-secondary" onclick="window.location.href='/'" type="submit">Contact Us</button>
-   </div>
+    </div>
+    </div>
       `
      document.getElementById("body").innerHTML=htmlend;
      change();
@@ -566,11 +716,11 @@ let ans=Math.floor(val2*nccity[0].rain*0.9);
 console.log(nccity);
 console.log(val2,nccity[0].rain,"lololoitit");
 console.log(ans);
-let htmlend1=`<h3>
+let htmlend1=`<h2>
    Hurray!!
    <br/>
    You saved around ${ans} liters
-  </h3>`;
+  </h2>`;
 
 document.getElementById("lastpageofform").innerHTML=htmlend1;
 }
